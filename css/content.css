@@ -1,0 +1,149 @@
+/* Contact Page */
+.contact-heading h3 {
+  text-align: center;
+  font-size: 30px;
+}
+.contact-container {
+  display: block;
+}
+
+/* Contact Form */
+.inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-bottom: 5px;
+  justify-content: center;
+}
+
+.inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  width: 48%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+button {
+  border: 1px solid black;
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+}
+button:hover {
+  border: 1px solid black;
+  background: white;
+  color: black;
+}
+textarea {
+  width: 97.5%;
+  height: 150px;
+  margin: 5px 10px 5px 0;
+  padding: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+form {
+  padding: 20px 200px;
+  text-align: center;
+}
+
+/* Contact Page */
+
+/* News Letter */
+
+.news-letter {
+  margin-top: 10%;
+  border: 1px solid black;
+  padding: 25px 10px;
+  text-align: center;
+}
+
+.news-letter h3,
+h4 {
+  margin-bottom: 5px;
+  font-weight: 300;
+}
+
+.news-letter input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 11px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  width: 74%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+/* News Letter */
+
+/* Meet My Team */
+
+.column {
+  float: left;
+  width: 16%;
+  margin-bottom: 16px;
+  padding: 0 0px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after,
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button-team {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button-team:hover {
+  background-color: white;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* Meet My Team */
