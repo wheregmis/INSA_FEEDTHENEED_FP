@@ -59,6 +59,9 @@
   width:100%;
   /* border:2px solid brown; */
 }
+.hidden-text{
+  display: none;
+}
 .service figure{
   margin: 10px auto;
   width: fit-content;
@@ -305,6 +308,9 @@ table, td,th{
   }
   .service{
     width:33%;
+  }
+  .hidden-text{
+    display: block;
   }
 }
 @media screen and (max-width: 650px) {
