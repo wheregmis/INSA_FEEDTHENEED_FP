@@ -69,9 +69,41 @@
             placeholder="Enter Message"
             name="message"
           ></textarea>
+
+          <br />
+          
+          <!-- regular file upload (Android 2.2+, NO iOS) -->
+                <input type="file"></input>
+
+                <!-- opens directly to the camera (Android 3.0+) -->
+                <input type="file" accept="image/*;capture=camera"></input>
+
+                <!-- opens directly to the camera in video mode (Android 3.0+) -->
+                <input type="file" accept="video/*;capture=camcorder"></input>
+
+                <!-- opens directly to the audio recorder (Android 3.0+) -->
+                <input type="file" accept="audio/*;capture=microphone"></input>
+
+                <br />
           <button type="submit">Submit</button>
         </div>
       </form>
+      <br />
+
+      <div class="contact-heading">
+        <h3>
+          Or
+          <br />
+          <a href="tel:18005555555" class="contact-heading"
+            >Call us at 1-800-555-5555</a
+          >
+          <br />
+          <a href="sms:18005555555"> Send Feedback By SMS </a>
+        </h3>
+      </div>
+      <!-- Mobile Specific Feature to Call -->
+
+      >
     </section>
 
     <footer>
