@@ -17,6 +17,7 @@
           href="https://fonts.googleapis.com/css?family=Ubuntu"
           rel="stylesheet"
         />
+       
       </head>
     <body>
         <section class="header">
@@ -41,7 +42,7 @@
        <section id="services">
             <h3>Our Services</h3>
             <div class="enumerations">
-                <div class="service">
+                <div class="service" id="left_slide">
                     <figure><img src="Images/placeholder.png" ></figure>
                     <h4>DISCOVER</h4>
                     <p>jhfkj hjdjhd jhhdj jdjhdhj jhfhjd</p>
@@ -51,7 +52,7 @@
                     <h4>PICK UP</h4>
                     <p>jhfkj hjdjhd jhhdj jdjhdhj jhfhjd</p>
                 </div>
-                <div class="service">
+                <div class="service" id="right_slide"> 
                    <figure> <img src="Images/eat.png" ></figure>
                     <h4>ENJOY</h4>
                     <p>jhfkj hjdjhd jhhdj jdjhdhj jhfhjd</p>
@@ -85,5 +86,14 @@
            
         </div>
     </body>
+    <script>
+        let slide = $('#left_slide')
+        slide.click(function () {
+            console.log("sdf")
+            slide.fadeIn();
+        });
+
+  
+    </script>
     
 </html>
