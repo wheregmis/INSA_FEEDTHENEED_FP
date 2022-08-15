@@ -87,10 +87,12 @@
         </div>
     </body>
     <script>
-       let leftSlide = '<div class="service" id="left_slide"><figure><img src="Images/placeholder.png" ></figure><h4>DISCOVER</h4><p>jhfkj hjdjhd jhhdj jdjhdhj jhfhjd</p>';
-       let $leftSlide = $('#left_slide');
 
-       $leftSlide.html(leftSlide).fadeIn(2000);
+
+    $('#left_slide').css('opacity','0')
+        $('#right_slide').css('opacity','0')
+       $('#left_slide').animate({"opacity":"1"},3000)
+       $('#right_slide').animate({"opacity":"1"},3000)
   
     </script>
     
