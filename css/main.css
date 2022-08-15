@@ -92,59 +92,57 @@ hr {
   position: relative;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
-  
-  .carousel:hover .controls {
-    opacity: 1;
-  }
-  
-  .controls {
-    opacity: 0;
-    display: flex;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    justify-content: space-between;
-    width: 100%;
-    z-index: 99999;
-    transition: all ease 0.5s;}
-    
-    .control {
-      margin: 0 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 40px;
-      width: 40px;
-      border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.7);
-      opacity: .5;
-      transition: ease .3s;
-      cursor: pointer;}
-      
-      .control:hover {
-        opacity: 1;
-      }
-    
-  
-  
-    .slides {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      display: flex;
-      width: 100%;
-      transition: 1s ease-in-out all;
 
-    }
-       
-   .slides .slide {
-      min-width: 100%;
-      min-height:200px;
-      height: auto;
-     padding:0px;
-     
-    }
+.carousel:hover .controls {
+  opacity: 1;
+}
+
+.controls {
+  opacity: 0;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 99999;
+  transition: all ease 0.5s;
+}
+
+.control {
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  opacity: 0.5;
+  transition: ease 0.3s;
+  cursor: pointer;
+}
+
+.control:hover {
+  opacity: 1;
+}
+
+.slides {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  width: 100%;
+  transition: 1s ease-in-out all;
+}
+
+.slides .slide {
+  min-width: 100%;
+  min-height: 200px;
+  height: auto;
+  padding: 0px;
+}
 /* Footer */
 
 footer {
@@ -157,3 +155,29 @@ footer {
 }
 
 /* Footer */
+
+/* Media Query */
+@media (max-width: 1299px) {
+  nav {
+    grid-template-areas: "navigation-bar" "social-media";
+    text-align: center;
+    margin: auto;
+    margin-top: 0em;
+    grid-gap: 1em;
+    font-size: 1.6em;
+  }
+
+  nav .social-media {
+    text-align: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .navigation-bar ul li a .active {
+    font-size: 1rem;
+  }
+  nav .social-media {
+    text-align: center;
+    font-size: 1.6em;
+  }
+}
