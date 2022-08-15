@@ -87,8 +87,10 @@
         </div>
     </body>
     <script>
-        $('#left_slide').css('visibility','hidden')
-       $('#left_slide').fadeIn("slow")
+        $('#left_slide').css('opacity','0')
+        $('#right_slide').css('opacity','0')
+       $('#left_slide').animate({"opacity":"1"},3000)
+       $('#right_slide').animate({"opacity":"1"},3000)
 
   
     </script>
