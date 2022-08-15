@@ -54,6 +54,20 @@
                   ></a
                 ></a
               >
+
+                <!-- regular file upload (Android 2.2+, NO iOS) -->
+                <input type="file"></input>
+
+                <!-- opens directly to the camera (Android 3.0+) -->
+                <input type="file" accept="image/*;capture=camera"></input>
+
+                <!-- opens directly to the camera in video mode (Android 3.0+) -->
+                <input type="file" accept="video/*;capture=camcorder"></input>
+
+                <!-- opens directly to the audio recorder (Android 3.0+) -->
+                <input type="file" accept="audio/*;capture=microphone"></input>
+
+
                 <p>
                     <div class="row">
                         <div class="column1">
