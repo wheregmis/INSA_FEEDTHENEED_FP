@@ -15,7 +15,112 @@
   margin-bottom: 5px;
   justify-content: center;
 }
+#autob{
+  /* width:70%; */
+  width:100%;
+  /* float: left; */
+}
+#autob h1{
+  padding: 14px;
+  font-size: 2.5em;
+}
+.enumerations{
+  
+}
+.enumerations h4{
+  font-size: 1.6em;
+  color:#474e5d;
+  font-weight: 900;
+  text-align: center;
+}
+.enumerations p{
+  text-align: center;
+}
+#services,#wwd{
+  width:80%;
+  margin: 0 auto 100px auto;
+  
+}
+#services h3,#wwd h3{
+  width:fit-content;
+  font-size: 2.5em;
+  text-align: center;
+  margin: 30px auto;
+  border-bottom: 5px solid #474e5d;;
 
+  
+}
+#wwd p{
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 200%;
+}
+.service{
+  width:100%;
+  /* border:2px solid brown; */
+}
+.hidden-text{
+  display: none;
+}
+.service figure{
+  margin: 10px auto;
+  width: fit-content;
+}
+.service img{
+  width:240px;
+}
+#autob p{
+padding: 14px;
+line-height: 200%;
+font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#autob img{
+  /* width:50%; */
+  width:100%;
+  margin-top: -10px;
+  /* padding: 14px; */
+  /* float:left; */
+}
+#autob h3{
+  padding: 14px;
+  font-size: 1.5em;
+}
+#naside{
+  /* width:28%; */
+  width:40%;
+  padding:14px;
+ 
+  
+  /* float: right; */
+}
+
+
+#table{
+  /* padding:14px; */
+  clear: both;
+  width: 100%;
+ 
+ 
+}
+table{
+  table-layout: fixed;
+  width: 100%;
+  
+}
+#table thead{
+  background-color: black;
+  color: white;
+  font-size: 0.5em;
+  
+}
+#table th{
+  /* padding:14px; */
+}
+#table td{
+  width:200px;
+  font-size:0.4em;
+  /* padding:14px; */
+}
 .inline input {
   vertical-align: middle;
   margin: 5px 10px 5px 0;
@@ -138,8 +243,78 @@ h4 {
 .button-team:hover {
   background-color: white;
 }
+footer{
+  clear: both;
+}
+@media only screen and (min-width: 860px) {
+  #autob{
+    /* width:70%; */
+    width:68%;
+    margin:0 auto;
+}
+#banner figure{
+  width:75%;
+  margin: 0 auto;
 
+}
+#banner img{
+  width:100%;
+
+}
+#autob img{
+    width:50%;
+   
+    margin-top: -10px;
+    padding: 14px;
+    float:left;
+}
+.column1,.column2{
+    width:49%;
+}
+.column1{
+    float: left;
+}
+.column2{
+    float: right;
+}
+#naside{
+    /* width:28%; */
+    width:28%;
+    padding:14px;
+    float: left;
+    position: absolute;
+    top:300px;
+   
+    
+    /* float: right; */
+}
+table, td,th{
+    padding: 14px;
+
+}
+#table thead{
+    font-size: 0.9em;
+    
+}
+
+#table td{
+    font-size:0.8em;
+    /* padding:14px; */
+}
+}
+@media screen and (min-width: 860px) {
+  .enumerations{
+    display: flex;
+  }
+  .service{
+    width:33%;
+  }
+  .hidden-text{
+    display: block;
+  }
+}
 @media screen and (max-width: 650px) {
+  
   .column {
     width: 100%;
     display: block;
