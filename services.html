@@ -42,7 +42,7 @@
        <section id="services">
             <h3>Our Services</h3>
             <div class="enumerations">
-                <div class="service" id="left_slide">
+                <div class="service" id="left_slide" style="display: none;">
                     <figure><img src="Images/placeholder.png" ></figure>
                     <h4>DISCOVER</h4>
                     <p>jhfkj hjdjhd jhhdj jdjhdhj jhfhjd</p>
@@ -87,9 +87,10 @@
         </div>
     </body>
     <script>
-        $('#left_slide').css('visibility','hidden')
-       $('#left_slide').fadeIn("slow")
+       let leftSlide = '<div class="service" id="left_slide"><figure><img src="Images/placeholder.png" ></figure><h4>DISCOVER</h4><p>jhfkj hjdjhd jhhdj jdjhdhj jhfhjd</p>';
+       let $leftSlide = $('#left_slide');
 
+       $leftSlide.html(leftSlide).fadeIn(2000);
   
     </script>
     
