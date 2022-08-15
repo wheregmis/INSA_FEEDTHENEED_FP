@@ -146,4 +146,7 @@ h4 {
   }
 }
 
-/* Meet My Team */
+/* Styles for profile page */
+.profile-image {
+ align-items: center;
+}
