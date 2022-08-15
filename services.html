@@ -15,7 +15,7 @@
           href="https://fonts.googleapis.com/css?family=Ubuntu"
           rel="stylesheet"
         />
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+       
       </head>
     <body>
         <section class="header">
@@ -40,7 +40,7 @@
        <section id="services">
             <h3>Our Services</h3>
             <div class="enumerations">
-                <div class="service">
+                <div class="service" id="left_slide">
                     <figure><img src="Images/placeholder.png" ></figure>
                     <h4>DISCOVER</h4>
                     <p>jhfkj hjdjhd jhhdj jdjhdhj jhfhjd</p>
@@ -50,7 +50,7 @@
                     <h4>PICK UP</h4>
                     <p>jhfkj hjdjhd jhhdj jdjhdhj jhfhjd</p>
                 </div>
-                <div class="service">
+                <div class="service" id="right_slide"> 
                    <figure> <img src="Images/eat.png" ></figure>
                     <h4>ENJOY</h4>
                     <p>jhfkj hjdjhd jhhdj jdjhdhj jhfhjd</p>
@@ -84,5 +84,12 @@
            
         </div>
     </body>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        $('#left_slide').fadeIn("slow",function(){
+            alert("faded");
+        })
+  
+    </script>
     
 </html>
