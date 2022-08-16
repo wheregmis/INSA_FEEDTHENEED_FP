@@ -40,6 +40,16 @@ window.onload = function () {
     objectStore.createIndex("name", "name", { unique: false });
     objectStore.createIndex("email", "email", { unique: false });
 
+    let objectStore2 = db.createObjectStore("involvedEvents", {
+      keyPath: "usereventId",
+      autoIncrement: true,
+    });
+
+    objectStore2.createIndex("userId", "userId", { unique: false });
+    objectStore2.createIndex("eventTitle", "eventTitle", { unique: false });
+
+    console.log("Database setup complete");
+
     console.log("Database setup complete");
     //  alert("setup done");
   };

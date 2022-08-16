@@ -16,30 +16,53 @@
           href="https://fonts.googleapis.com/css?family=Ubuntu"
           rel="stylesheet"
         />
+            <!-- Splash Screen -->
+    <link rel="apple-touch-startup-image" href="home.png" />
+
+    <!-- IOS Icons -->
+    <link rel="apple-touch-icon" href="home.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="home.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="home.png" />
+
+    <!-- js -->
+    <script src="js/index.js" defer></script>
       </head>
     <body>
-        <section class="header">
-            <h1>Feed The Need</h1>
-            <h4>Saving Lives One Belly at a time</h4>
-          </section>
-          <nav>
-            <div class="navigation-bar">
-              <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="project.html">Projects</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="login.html">Registration</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
+       <section class="header">
+      <h1>Feed The Need</h1>
+      <div contenteditable>Feeding one tommy at a time</div>
+    </section>
+    <nav>
+      <div class="navigation-bar">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="services.html">Services</a></li>
+          <div id="login-block">
+            <li><a href="login.html" class="active">Login</a></li>
+            <li><a href="registration.html">Registration</a></li>
+          </div>
+        </ul>
+      </div>
+
+      <div class="social-media">
+        <a href="https://www.facebook.com"></a><i class="fa fa-facebook"></i>
+        <i class="fa fa-instagram"></i>
+        <div class="d-lg-block d-none" id="loggedIn-block">
+          <div class="dropdown">
+            <span class="d-flex"
+              ><i class="icofont-ui-user" style="padding-right: 10px"></i>
+              <p>Hi <span id="userName"></span></p>
+            </span>
+            <div class="dropdown-content">
+              <a id="logout">Logout</a>
             </div>
-            <div class="social-media">
-              <a href="https://www.facebook.com"></a><i class="fa fa-facebook"></i>
-              <i class="fa fa-instagram"></i>
-            </div>
-          </nav>
+          </div>
+        </div>
+      </div>
+    </nav>
           <br />
           <section id="banner">
             <figure><img src="Images/image1.jpg" alt="image"></figure>

@@ -29,6 +29,7 @@
     <!-- Splash Screen -->
     <link rel="apple-touch-startup-image" href="home.png" />
 
+    <!-- IOS Icons -->
     <link rel="apple-touch-icon" href="home.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="home.png" />
     <link rel="apple-touch-icon" sizes="114x114" href="home.png" />
@@ -46,7 +47,7 @@
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="project.html">Events</a></li>
+          <li><a href="events.html">Events</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="services.html">Services</a></li>
           <div id="login-block">
@@ -96,7 +97,11 @@
       <div class="row">
         <div class="column">
           <div class="card">
-            <img src="/w3images/team1.jpg" alt="Jane" style="width: 100%" />
+            <img
+              src="images/event1.jpg"
+              alt="Event image"
+              style="width: 100%; height: 10em"
+            />
             <div class="container event-div">
               <h2>Event 1</h2>
               <p class="title">Food Distribution in Toronto</p>
@@ -108,13 +113,93 @@
         </div>
         <div class="column">
           <div class="card">
-            <img src="/w3images/team1.jpg" alt="Jane" style="width: 100%" />
+            <img
+              src="images/event2.jpg"
+              alt="Event image"
+              style="width: 100%; height: 10em"
+            />
             <div class="container event-div">
-              <h2>Event 1</h2>
+              <h2>Event 2</h2>
               <p class="title">Food Distribution in Toronto 2</p>
               <p>Sunday food distribution event for toronto</p>
               <p>isharaux@gmail.com</p>
-              <p><button class="button-team">Involved</button></p>
+              <p>
+                <button class="button-team" onclick="myFunction(this)">
+                  Involve
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <img
+              src="images/event3.jpg"
+              alt="Event image"
+              style="width: 100%; height: 10em"
+            />
+            <div class="container event-div">
+              <h2>Event 3</h2>
+              <p class="title">Food Distribution in Toronto</p>
+              <p>Sunday food distribution event for toronto</p>
+              <p>isharaux@gmail.com</p>
+              <p><button class="button-team">Involve</button></p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <img
+              src="images/event4.jpg"
+              alt="Event image"
+              style="width: 100%; height: 10em"
+            />
+            <div class="container event-div">
+              <h2>Event 4</h2>
+              <p class="title">Food Distribution in Toronto 2</p>
+              <p>Sunday food distribution event for toronto</p>
+              <p>isharaux@gmail.com</p>
+              <p>
+                <button class="button-team" onclick="myFunction(this)">
+                  Involve
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <img
+              src="images/event5.jpg"
+              alt="Event image"
+              style="width: 100%; height: 10em"
+            />
+            <div class="container event-div">
+              <h2>Event 5</h2>
+              <p class="title">Food Distribution in Toronto</p>
+              <p>Sunday food distribution event for toronto</p>
+              <p>isharaux@gmail.com</p>
+              <p><button class="button-team">Involve</button></p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <img
+              src="images/event6.jpeg"
+              alt="Event image"
+              style="width: 100%; height: 10em"
+            />
+            <div class="container event-div">
+              <h2>Event 6</h2>
+              <p class="title">Food Distribution in Toronto 2</p>
+              <p>Sunday food distribution event for toronto</p>
+              <p>isharaux@gmail.com</p>
+              <p>
+                <button class="button-team" onclick="myFunction(this)">
+                  Involve
+                </button>
+              </p>
             </div>
           </div>
         </div>
@@ -122,6 +207,28 @@
     </section>
 
     <!-- Events End Here -->
+
+    <div class="get-in-touch">
+      <h3>Newsletter</h3>
+      <div class="contact-heading">
+        <h4>Get latest updates and offers.</h4>
+        <form action="#" class="contact-form" method="post">
+          <div class="inline">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              required=""
+            />
+            <button class="button" type="submit">Go</button>
+          </div>
+        </form>
+        <p>
+          Sign up for our latest news &amp; articles. We won’t give you spam
+          mails.
+        </p>
+      </div>
+    </div>
 
     <footer>
       <p>&copy; Copyright 2022 Feed The Need</p>
@@ -145,5 +252,38 @@
       }
       toggle = !toggle;
     });
+  </script>
+
+  <script>
+    function myFunction(element) {
+      // grab the values entered into the form fields and store them in an object ready for being inserted into the DB
+      let user = localStorage.getItem("user");
+      user = user ? user : sessionStorage.getItem("user");
+      let newFav = {
+        userId: user["userId"],
+        eventTitle: "Food Distribution in Toronto",
+      };
+
+      // open a read/write db transaction, ready for adding the data
+      let transaction = db.transaction(["involvedEvents"], "readwrite");
+
+      // call an object store that's already been added to the database
+      let objectStore = transaction.objectStore("involvedEvents");
+
+      // Make a request to add our newUser object to the object store
+      var request = objectStore.add(newFav);
+      request.onsuccess = function () {
+        alert("Successfully added to your involved events list");
+      };
+
+      // Report on the success of the transaction completing, when everything is done
+      transaction.oncomplete = function () {
+        console.log("Transaction completed: database modification finished.");
+      };
+
+      transaction.onerror = function () {
+        console.log("Transaction not opened due to error");
+      };
+    }
   </script>
 </html>

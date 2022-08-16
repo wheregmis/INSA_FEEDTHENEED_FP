@@ -179,6 +179,29 @@ footer {
   /* display: block; */
 }
 
+.get-in-touch {
+  margin-top: 4%;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.get-in-touch h3,
+h4 {
+  margin-bottom: 5px;
+  font-weight: 300;
+}
+
+.get-in-touch input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 11px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  width: 74%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
 /* Footer */
 
 /* Media Query */
