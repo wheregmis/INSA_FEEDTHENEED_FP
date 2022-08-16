@@ -107,7 +107,14 @@
               <p class="title">Food Distribution in Toronto</p>
               <p>Sunday food distribution event for toronto</p>
               <p>isharaux@gmail.com</p>
-              <p><button class="button-team">Involve</button></p>
+              <p>
+                <button
+                  class="button-team"
+                  onclick="myFunction(this, 'Food Distribution in Toronto')"
+                >
+                  Involve
+                </button>
+              </p>
             </div>
           </div>
         </div>
@@ -124,7 +131,10 @@
               <p>Sunday food distribution event for toronto</p>
               <p>isharaux@gmail.com</p>
               <p>
-                <button class="button-team" onclick="myFunction(this)">
+                <button
+                  class="button-team"
+                  onclick="myFunction(this, 'Food Distribution in Toronto 2')"
+                >
                   Involve
                 </button>
               </p>
@@ -140,10 +150,17 @@
             />
             <div class="container event-div">
               <h2>Event 3</h2>
-              <p class="title">Food Distribution in Toronto</p>
+              <p class="title">Food Distribution in Toronto 3</p>
               <p>Sunday food distribution event for toronto</p>
               <p>isharaux@gmail.com</p>
-              <p><button class="button-team">Involve</button></p>
+              <p>
+                <button
+                  class="button-team"
+                  onclick="myFunction(this, 'Food Distribution in Toronto 3')"
+                >
+                  Involve
+                </button>
+              </p>
             </div>
           </div>
         </div>
@@ -156,11 +173,14 @@
             />
             <div class="container event-div">
               <h2>Event 4</h2>
-              <p class="title">Food Distribution in Toronto 2</p>
+              <p class="title">Food Distribution in Toronto 4</p>
               <p>Sunday food distribution event for toronto</p>
               <p>isharaux@gmail.com</p>
               <p>
-                <button class="button-team" onclick="myFunction(this)">
+                <button
+                  class="button-team"
+                  onclick="myFunction(this, 'Food Distribution in Toronto 4')"
+                >
                   Involve
                 </button>
               </p>
@@ -176,10 +196,17 @@
             />
             <div class="container event-div">
               <h2>Event 5</h2>
-              <p class="title">Food Distribution in Toronto</p>
+              <p class="title">Food Distribution in Toronto 5</p>
               <p>Sunday food distribution event for toronto</p>
               <p>isharaux@gmail.com</p>
-              <p><button class="button-team">Involve</button></p>
+              <p>
+                <button
+                  class="button-team"
+                  onclick="myFunction(this, 'Food Distribution in Toronto 5')"
+                >
+                  Involve
+                </button>
+              </p>
             </div>
           </div>
         </div>
@@ -192,11 +219,14 @@
             />
             <div class="container event-div">
               <h2>Event 6</h2>
-              <p class="title">Food Distribution in Toronto 2</p>
+              <p class="title">Food Distribution in Toronto 6</p>
               <p>Sunday food distribution event for toronto</p>
               <p>isharaux@gmail.com</p>
               <p>
-                <button class="button-team" onclick="myFunction(this)">
+                <button
+                  class="button-team"
+                  onclick="myFunction(this, 'Food Distribution in Toronto 6')"
+                >
                   Involve
                 </button>
               </p>
@@ -255,13 +285,11 @@
   </script>
 
   <script>
-    function myFunction(element) {
+    function myFunction(element, eventTitle) {
       // grab the values entered into the form fields and store them in an object ready for being inserted into the DB
-      let user = localStorage.getItem("user");
-      user = user ? user : sessionStorage.getItem("user");
       let newFav = {
-        userId: user["userId"],
-        eventTitle: "Food Distribution in Toronto",
+        userId: 1,
+        eventTitle: eventTitle,
       };
 
       // open a read/write db transaction, ready for adding the data
@@ -273,6 +301,11 @@
       // Make a request to add our newUser object to the object store
       var request = objectStore.add(newFav);
       request.onsuccess = function () {
+        if (element.innerHTML == "Involve") {
+          element.innerHTML = "Involved";
+        } else {
+          element.innerHTML = "Involve";
+        }
         alert("Successfully added to your involved events list");
       };
 
