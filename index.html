@@ -286,37 +286,46 @@
 
   <script>
     function myFunction(element, eventTitle) {
-      // grab the values entered into the form fields and store them in an object ready for being inserted into the DB
-      let newFav = {
-        userId: 1,
-        eventTitle: eventTitle,
-      };
+      // // grab the values entered into the form fields and store them in an object ready for being inserted into the DB
+      // let newFav = {
+      //   userId: 1,
+      //   eventTitle: eventTitle,
+      // };
 
-      // open a read/write db transaction, ready for adding the data
-      let transaction = db.transaction(["involvedEvents"], "readwrite");
+      // // open a read/write db transaction, ready for adding the data
+      // let transaction = db.transaction(["involvedEvents"], "readwrite");
 
-      // call an object store that's already been added to the database
-      let objectStore = transaction.objectStore("involvedEvents");
+      // // call an object store that's already been added to the database
+      // let objectStore = transaction.objectStore("involvedEvents");
 
-      // Make a request to add our newUser object to the object store
-      var request = objectStore.add(newFav);
-      request.onsuccess = function () {
-        if (element.innerHTML == "Involve") {
-          element.innerHTML = "Involved";
-        } else {
-          element.innerHTML = "Involve";
-        }
-        alert("Successfully added to your involved events list");
-      };
+      // // Make a request to add our newUser object to the object store
+      // var request = objectStore.add(newFav);
+      // request.onsuccess = function () {
+      //   if (element.innerHTML == "Involve") {
+      //     element.innerHTML = "Involved";
+      //   } else {
+      //     element.innerHTML = "Involve";
+      //   }
+      //   alert("Successfully added to your involved events list");
+      // };
 
-      // Report on the success of the transaction completing, when everything is done
-      transaction.oncomplete = function () {
-        console.log("Transaction completed: database modification finished.");
-      };
+      // // Report on the success of the transaction completing, when everything is done
+      // transaction.oncomplete = function () {
+      //   console.log("Transaction completed: database modification finished.");
+      // };
 
-      transaction.onerror = function () {
-        console.log("Transaction not opened due to error");
-      };
+      // transaction.onerror = function () {
+      //   console.log("Transaction not opened due to error");
+      // };
+
+      if (element.innerHTML == "Involve") {
+        element.innerHTML = "Involved";
+        localStorage.setItem(eventTitle, "Involved");
+      } else {
+        element.innerHTML = "Involve";
+        localStorage.setItem(eventTitle, Involve);
+      }
+      alert("Successfully added to your involved events list");
     }
   </script>
 </html>

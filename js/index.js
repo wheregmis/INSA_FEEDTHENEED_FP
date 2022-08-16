@@ -110,13 +110,30 @@ window.onload = function () {
     Array.from(elements).forEach((element, indexmain) => {
       // conditional logic here.. access element
       console.log(element.querySelector(".title").innerHTML);
+      console.log(
+        localStorage.getItem(element.querySelector(".title").innerHTML)
+      );
       if (
-        element.querySelector(".title").innerHTML ==
-        "Food Distribution in Toronto"
+        localStorage.getItem(element.querySelector(".title").innerHTML) == null
       ) {
-        element.querySelector(".button-team").innerHTML = "Involved";
-        console.log(element.querySelector(".button-team").innerHTML);
+        element.querySelector(".button-team").innerHTML = "Involve";
+      } else {
+        element.querySelector(".button-team").innerHTML = localStorage.getItem(
+          element.querySelector(".title").innerHTML
+        );
       }
+      // if (localStorage.getItem(element.innerHTML) )
+      //   element.querySelector(".button-team").innerHTML = localStorage.getItem(
+      //     element.innerHTML
+      //   );
+
+      // if (
+      //   element.querySelector(".title").innerHTML ==
+      //   "Food Distribution in Toronto"
+      // ) {
+      //   element.querySelector(".button-team").innerHTML = "Involved";
+      //   console.log(element.querySelector(".button-team").innerHTML);
+      // }
     });
   }
 
