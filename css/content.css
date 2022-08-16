@@ -145,7 +145,7 @@ table {
   padding: 20px;
   background-color: #fff;
   border: 1px solid #ddd;
-  width: 48%;
+  width: 90%;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
@@ -264,7 +264,7 @@ h4 {
 footer {
   clear: both;
 }
-@media only screen and (min-width: 860px) {
+@media  screen and (min-width: 860px) {
   #autob {
     /* width:70%; */
     width: 68%;
@@ -333,6 +333,7 @@ footer {
     background: var(--bg-color);
     border-radius: var(--border-radius);
   }
+
 }
 @media screen and (min-width: 860px) {
   .enumerations {
@@ -352,6 +353,10 @@ footer {
     padding: 20px 10px;
     text-align: center;
   }
+  .inline input {
+    width: 48%;
+  }
+
 }
 @media screen and (max-width: 650px) {
   .column {
