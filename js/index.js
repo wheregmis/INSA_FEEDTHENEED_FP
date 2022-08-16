@@ -105,21 +105,25 @@ window.onload = function () {
     const elements = document.querySelectorAll(".event-div");
 
     events.forEach((eventCard) => {
-      var $div = $("<div>", {class: "row"});
+      let $div = $("<div>", {class: "row"});
+      let checkInvolvement = eventCard.eventInvolvedUsers.includes(currentUser.userId);
 
-      $(".row").append( `
+      let eventCardItem = `
       <div class="column">
-        <div class="card">
-          <img src="/w3images/team1.jpg" alt="Jane" style="width: 100%" />
-          <div class="container event-div">
-            <h2>${eventCard.eventName}</h2>
-            <p class="title">${eventCard.eventSubtitle}</p>
-            <p>${eventCard.eventDescription}</p>
-            <p><button class="button-team">${eventCard.eventInvolvedUsers.includes(currentUser.userId) ? "Involved" : "Involve"}</button></p>
-          </div>
+      <div class="card">
+        <img src="/w3images/team1.jpg" alt="Jane" style="width: 100%" />
+        <div class="container event-div">
+          <h2>${eventCard.eventName}</h2>
+          <p class="title">${eventCard.eventSubtitle}</p>
+          <p>${eventCard.eventDescription}</p>
+          <p><button class="button-team" ${checkInvolvement? 'disabled': ''}>${checkInvolvement ? "Involved" : "Involve"}</button></p>
         </div>
       </div>
-      `)
+    </div>
+      `
+
+
+      $(".row").append(eventCardItem)
      
     })
     
