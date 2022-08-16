@@ -24,6 +24,18 @@
   padding: 14px;
   font-size: 2.5em;
 }
+#partners{
+  width:75%;
+  margin:50px auto;
+}
+#partners ul{
+  margin-top:30px;
+}
+#partners ul li a img{
+  width:80%;
+  margin-bottom: 30px;
+  /* height:150px; */
+}
 .enumerations{
   
 }
@@ -41,7 +53,7 @@
   margin: 0 auto 100px auto;
   
 }
-#services h3,#wwd h3{
+#services h3,#wwd h3, #partners h3,#autob h3{
   width:fit-content;
   font-size: 2.5em;
   text-align: center;
@@ -325,6 +337,10 @@ table, td,th{
   }
   .hidden-text{
     display: block;
+  }
+  #partners ul li a img{
+    width:21%;
+    height:150px;
   }
 }
 @media screen and (max-width: 650px) {
