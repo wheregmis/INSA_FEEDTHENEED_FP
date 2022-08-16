@@ -25,7 +25,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script type="text/javascript" src="js/script.js"></script>
+    <!-- <script type="text/javascript" src="js/script.js"></script> -->
+
+    <!-- js -->
+    <script src="js/index.js" defer></script>
   </head>
   <body>
     <section class="header">
@@ -41,14 +44,27 @@
           <li><a href="contact.html">Contact</a></li>
           <li><a href="profile.html">Profile</a></li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="login.html" class="active">Login</a></li>
-          <li><a href="registration.html">Registration</a></li>
+          <div id="login-block">
+            <li><a href="login.html" class="active">Login</a></li>
+            <li><a href="registration.html">Registration</a></li>
+          </div>
         </ul>
       </div>
 
       <div class="social-media">
         <a href="https://www.facebook.com"></a><i class="fa fa-facebook"></i>
         <i class="fa fa-instagram"></i>
+        <div class="d-lg-block d-none" id="loggedIn-block">
+          <div class="dropdown">
+            <span class="d-flex"
+              ><i class="icofont-ui-user" style="padding-right: 10px"></i>
+              <p>Hi <span id="userName"></span></p>
+            </span>
+            <div class="dropdown-content">
+              <a id="logout">Logout</a>
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
 
@@ -76,12 +92,24 @@
         <div class="column">
           <div class="card">
             <img src="/w3images/team1.jpg" alt="Jane" style="width: 100%" />
-            <div class="container">
+            <div class="container event-div">
               <h2>Event 1</h2>
               <p class="title">Food Distribution in Toronto</p>
               <p>Sunday food distribution event for toronto</p>
-              <p>isharaux@gmail;q.com</p>
-              <p><button class="button-team">Contact</button></p>
+              <p>isharaux@gmail.com</p>
+              <p><button class="button-team">Involve</button></p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <img src="/w3images/team1.jpg" alt="Jane" style="width: 100%" />
+            <div class="container event-div">
+              <h2>Event 1</h2>
+              <p class="title">Food Distribution in Toronto 2</p>
+              <p>Sunday food distribution event for toronto</p>
+              <p>isharaux@gmail.com</p>
+              <p><button class="button-team">Involved</button></p>
             </div>
           </div>
         </div>
