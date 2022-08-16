@@ -55,9 +55,9 @@ window.onload = function () {
     if (isLoggedIn) {
       document.querySelector("#userName").innerHTML = JSON.parse(user).name;
       document.querySelector("#login-block").style.display = "none";
-      document.querySelector("#loggedIn-block").style.display = "block";
+      document.querySelector("#loggedIn-block").style.display = "inline";
     } else {
-      document.querySelector("#login-block").style.display = "block";
+      document.querySelector("#login-block").style.display = "inline";
       document.querySelector("#loggedIn-block").style.display = "none";
     }
   }
