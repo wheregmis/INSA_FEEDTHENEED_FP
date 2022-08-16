@@ -1,7 +1,8 @@
 
 let db;
 let transaction;
-const request = indexedDB.open("feedtheneedDB", 1);
+let DBNAME = 'feedtheneedDB';
+const request = indexedDB.open(DBNAME, 1);
 request.onerror = (event) => {
     console.error("Index DB Access not allowed");
 };
@@ -133,7 +134,7 @@ function deleteAnEvent(eventId){
 }
 
 function getPasswordHash(plainTextPass){
-    return CryptoJS.SHA256(plainTextPass).toString();
+    return btoa(plainTextPass);
 }
 
 
@@ -153,10 +154,12 @@ function checkUserCredsCorrect(username, password){
             console.log(`The user with ${username} not found`);
         } else {
             console.table(event.target.result);
-            if(event.target.result.password === getPasswordHash(pass)){
+            if(event.target.result.password === getPasswordHash(password)){
                 // TODO: add correct password logic Here
+                return true;
             }else{
                 // TODO: Add incorrect password logic here
+                return false;
             }
         }
     };
@@ -169,6 +172,3 @@ function checkUserCredsCorrect(username, password){
         db.close();
     };
 }
-
-
-
