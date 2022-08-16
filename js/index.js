@@ -18,10 +18,12 @@ window.onload = function () {
   // onsuccess handler signifies that the database opened successfully
   request.onsuccess = function () {
     console.log("Database opened succesfully");
+    
     checkLogin();
-    mapFav();
     // Store the opened database object in the db variable. This is used a lot below
     db = request.result;
+    addEvents();
+    mapFav();
   };
 
   // Setup the database tables if this has not already been done
@@ -33,39 +35,26 @@ window.onload = function () {
       keyPath: "userId",
       autoIncrement: true,
     });
-
+    let eventObjectStore = db.createObjectStore("events", {
+      keyPath: "eventId",
+      autoIncrement: true,
+    });
+    eventObjectStore.createIndex("eventName", "eventName", { unique: false });
     objectStore.createIndex("password", "password", { unique: false });
     objectStore.createIndex("name", "name", { unique: false });
     objectStore.createIndex("email", "email", { unique: false });
 
     console.log("Database setup complete");
     //  alert("setup done");
+    addEvents();
     checkLogin();
-    mapFav();
+    
   };
-  // -------------------- For DB END --------------------
 
-  function checkLogin() {
-    let user = localStorage.getItem("user");
-    user = user ? user : sessionStorage.getItem("user");
+  function addEvents(){
 
-    const isLoggedIn = user ? true : false;
-    console.log(isLoggedIn);
 
-    if (isLoggedIn) {
-      document.querySelector("#userName").innerHTML = JSON.parse(user).name;
-      document.querySelector("#login-block").style.display = "none";
-      document.querySelector("#loggedIn-block").style.display = "block";
-    } else {
-      document.querySelector("#login-block").style.display = "block";
-      document.querySelector("#loggedIn-block").style.display = "none";
-    }
-  }
 
-  function mapFav() {
-    let user = localStorage.getItem("user");
-    let currentUser = user ? user : sessionStorage.getItem("user");
-    currentUser = JSON.parse(currentUser);
     const events = [
       {
         eventName: "Event 1",
@@ -98,17 +87,66 @@ window.onload = function () {
         eventInvolvedUsers: []
       },
     ]
-    const elements = document.querySelectorAll(".event-div");
+
+    // open a read/write db transaction, ready for adding the data
+    let transaction = db.transaction(["events"], "readwrite");
+
+    // call an object store that's already been added to the database
+    let objectStore = transaction.objectStore("events");
+
+
+    events.forEach(event => {
+      const request = objectStore.add(event);
+    })
+    // Make a request to add our newUser object to the object store
+    
+
+  }
+
+
+  // -------------------- For DB END --------------------
+
+  function checkLogin() {
+    let user = localStorage.getItem("user");
+    user = user ? user : sessionStorage.getItem("user");
+
+    const isLoggedIn = user ? true : false;
+    console.log(isLoggedIn);
+
+    if (isLoggedIn) {
+      document.querySelector("#userName").innerHTML = JSON.parse(user).name;
+      document.querySelector("#login-block").style.display = "none";
+      document.querySelector("#loggedIn-block").style.display = "block";
+    } else {
+      document.querySelector("#login-block").style.display = "block";
+      document.querySelector("#loggedIn-block").style.display = "none";
+    }
+  }
+
+  function mapFav() {
+    let user = localStorage.getItem("user");
+    let currentUser = user ? user : sessionStorage.getItem("user");
+    currentUser = JSON.parse(currentUser);
+
+
+    let transaction = db.transaction(["events"], "readonly");
+
+    let objectStore = transaction.objectStore("events");
+    var request = objectStore.getAll();
+
+    request.onsuccess = function (e) {
+      var result = e.target.result;
+      console.log("request", result);
+      //alert(result);
+      if (typeof result == "undefined") {
+        alert("Events not added");
+      } else {
+        const elements = document.querySelectorAll(".event-div");
+        events= JSON.parse(result);
 
     events.forEach((eventCard) => {
-      let $div = $("<div>", {class: "row"});
       
       let checkInvolvement = eventCard.eventInvolvedUsers.includes(currentUser.userId);
-
-      function buttonClick() {
-        console.log("testing123")
-      }
-
       let eventCardItem = `
       <div class="column">
       <div class="card">
@@ -124,14 +162,16 @@ window.onload = function () {
       </div>
     </div>
       `
-
-
-      $(".row").append(eventCardItem)
-     
+      $(".row").append(eventCardItem)   
     })
+
+  }
+    
+     
+    
     
   }
-
+  }
   logoutBtn.addEventListener("click", (event) => {
     localStorage.removeItem("user");
     sessionStorage.removeItem("user");

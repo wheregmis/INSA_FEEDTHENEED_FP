@@ -37,6 +37,12 @@ window.onload = function () {
       autoIncrement: true,
     });
 
+    let eventObjectStore = db.createObjectStore("events", {
+      keyPath: "eventId",
+      autoIncrement: true,
+    });
+    eventObjectStore.createIndex("eventName", "eventName", { unique: false });
+
     objectStore.createIndex("password", "password", { unique: false });
     objectStore.createIndex("name", "name", { unique: false });
     objectStore.createIndex("email", "email", { unique: false });
