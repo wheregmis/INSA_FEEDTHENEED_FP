@@ -63,19 +63,15 @@ window.onload = function () {
   }
 
   function mapFav() {
-    const currentUser = {
-      email: "ishara@gmail.com",
-      name: "ishara",
-      password: "ishara123",
-      userId: 1
-    }
-
+    let user = localStorage.getItem("user");
+    let currentUser = user ? user : sessionStorage.getItem("user");
+    currentUser = JSON.parse(currentUser);
     const events = [
       {
         eventName: "Event 1",
         eventSubtitle: "Event 1 subtitle",
         eventDescription: "Some Event Description",
-        eventInvolvedUsers: [1]
+        eventInvolvedUsers: [ 1 ]
       },
       {
         eventName: "Event 2",
@@ -87,7 +83,7 @@ window.onload = function () {
         eventName: "Event 3",
         eventSubtitle: "Event 3 subtitle",
         eventDescription: "Some Event Description",
-        eventInvolvedUsers: [1]
+        eventInvolvedUsers: [ 1 ]
       },
       {
         eventName: "Event 4",
@@ -106,7 +102,12 @@ window.onload = function () {
 
     events.forEach((eventCard) => {
       let $div = $("<div>", {class: "row"});
+      
       let checkInvolvement = eventCard.eventInvolvedUsers.includes(currentUser.userId);
+
+      function buttonClick() {
+        console.log("testing123")
+      }
 
       let eventCardItem = `
       <div class="column">
@@ -116,7 +117,9 @@ window.onload = function () {
           <h2>${eventCard.eventName}</h2>
           <p class="title">${eventCard.eventSubtitle}</p>
           <p>${eventCard.eventDescription}</p>
-          <p><button class="button-team" ${checkInvolvement? 'disabled': ''}>${checkInvolvement ? "Involved" : "Involve"}</button></p>
+          <p><button class="button-team" ${checkInvolvement? 'disabled': ''}>
+          ${checkInvolvement ? "Involved" : "Involve"}
+          </button></p>
         </div>
       </div>
     </div>
