@@ -115,7 +115,7 @@ window.onload = function () {
             <h2>${eventCard.eventName}</h2>
             <p class="title">${eventCard.eventSubtitle}</p>
             <p>${eventCard.eventDescription}</p>
-            <p><button class="button-team">Involve</button></p>
+            <p><button class="button-team">${eventCard.eventInvolvedUsers.includes(currentUser.userId) ? "Involved" : "Involve"}</button></p>
           </div>
         </div>
       </div>
