@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/content.css" />
      <link rel="stylesheet" href="css/login.css" />
+     <script type="text/javascript" src="js/jquery.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
@@ -44,7 +45,8 @@
       <h2>Login Form</h2>
 
       <form id="loginForm">
-        <div class="imgcontainer">
+
+        <div class="imgcontainer" id="our_image">
           <img src="images/login_avatar.png" alt="Avatar" class="avatar">
         </div>
 
@@ -74,4 +76,13 @@
       <p>&copy; Copyright 2022 Sabin Regmi</p>
     </footer>
   </body>
+  <script>
+
+
+    $('#our_image').css('opacity','0')
+       
+       $('#our_image').animate({"opacity":"1"},3000)
+       
+  
+    </script>
 </html>

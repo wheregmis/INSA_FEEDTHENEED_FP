@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/content.css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
@@ -40,7 +41,7 @@
     <hr />
 
     <section class="contact-container">
-      <div class="contact-heading">
+      <div class="contact-heading" id="contacth">
         <h3>
           I appreciate you taking the time to get in touch.
           <br />
@@ -78,4 +79,11 @@
       <p>&copy; Copyright 2022 Sabin Regmi</p>
     </footer>
   </body>
+  <script>
+
+
+    $('#contacth').css('opacity','0')
+       $('#contacth').animate({"opacity":"1"},3000)
+  
+    </script>
 </html>
