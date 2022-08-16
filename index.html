@@ -130,4 +130,18 @@
   </body>
   <script type="text/javascript" src="Javascript/script.js"></script>
   <script type="text/javascript" src="js/test.js"></script>
+  <script>
+    var toggle = true;
+    $('#loggedIn-block').on("click",function(){
+      if(toggle){
+     $('#loggedIn-block .dropdown:hover .dropdown-content').css("display","block")
+    
+    }
+     else{
+      $('#loggedIn-block .dropdown:hover .dropdown-content').css("display","none")
+      
+     }
+     toggle=!toggle;
+    })
+  </script>
 </html>

@@ -14,10 +14,10 @@ body {
 nav {
   display: grid;
   grid-template-areas: "navigation-bar social-media";
-  width: 80%;
+  width: 85%;
   margin: auto;
   margin-top: 3%;
-  grid-gap: 15em;
+  grid-gap: 10em;
 }
 
 nav .social-media {
@@ -153,10 +153,14 @@ footer {
   margin-top: 2%;
   margin-bottom: 0;
 }
+.carousel{
+  display: none;
+}
 
 .dropdown {
   position: relative;
   display: inline-block;
+  
 }
 
 .dropdown-content {
@@ -169,9 +173,12 @@ footer {
   padding: 12px 16px;
   z-index: 1;
 }
-
+.dropdown:hover{
+cursor: pointer;
+}
 #loggedIn-block .dropdown:hover .dropdown-content {
-  display: block;
+  /* display: block; */
+  
 }
 
 /* Footer */
@@ -189,9 +196,36 @@ footer {
 
   nav .social-media {
     text-align: center;
+    width:30%;
+    display: flex;
   }
 }
-
+@media screen and (min-width:860px){
+  .carousel{
+    display: block;
+  }
+  #login-block{
+    width:fit-content;
+    display: inline !important;
+   
+  }
+  nav .social-media{
+    
+    width: 100%;
+  }
+  #loggedIn-block{
+    display: inline !important;
+  }
+  .dropdown{
+    display: inline !important;
+    width: fit-content;
+    
+  }
+  .dropdown p{
+    width: fit-content;
+    display: inline !important;
+  }
+}
 @media (max-width: 700px) {
   .navigation-bar ul li a .active {
     font-size: 1rem;
