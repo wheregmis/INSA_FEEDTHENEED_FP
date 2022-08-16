@@ -63,14 +63,66 @@ window.onload = function () {
   }
 
   function mapFav() {
-    const elements = document.querySelectorAll(".event-div");
-    Array.from(elements).forEach((element, indexmain) => {
-      // conditional logic here.. access element
+    const currentUser = {
+      email: "ishara@gmail.com",
+      name: "ishara",
+      password: "ishara123",
+      userId: 1
+    }
 
-      if (element.querySelector(".title") == "Food Distribution in Toronto") {
-        element.querySelector(".button-team").innerHTML = "Involved";
-      }
-    });
+    const events = [
+      {
+        eventName: "Event 1",
+        eventSubtitle: "Event 1 subtitle",
+        eventDescription: "Some Event Description",
+        eventInvolvedUsers: [1]
+      },
+      {
+        eventName: "Event 2",
+        eventSubtitle: "Event 2 subtitle",
+        eventDescription: "Some Event Description",
+        eventInvolvedUsers: []
+      },
+      {
+        eventName: "Event 3",
+        eventSubtitle: "Event 3 subtitle",
+        eventDescription: "Some Event Description",
+        eventInvolvedUsers: [1]
+      },
+      {
+        eventName: "Event 4",
+        eventSubtitle: "Event 4 subtitle",
+        eventDescription: "Some Event Description",
+        eventInvolvedUsers: []
+      },
+      {
+        eventName: "Event 5",
+        eventSubtitle: "Event 5 subtitle",
+        eventDescription: "Some Event Description",
+        eventInvolvedUsers: []
+      },
+    ]
+    const elements = document.querySelectorAll(".event-div");
+
+    events.forEach((eventCard) => {
+      var $div = $("<div>", {class: "row"});
+
+      $(".row").append( `
+      <div class="column">
+        <div class="card">
+          <img src="/w3images/team1.jpg" alt="Jane" style="width: 100%" />
+          <div class="container event-div">
+            <h2>${eventCard.eventName}</h2>
+            <p class="title">${eventCard.eventSubtitle}</p>
+            <p>${eventCard.eventDescription}</p>
+            <p><button class="button-team">Involve</button></p>
+          </div>
+        </div>
+      </div>
+      `)
+     
+    })
+    
   }
 
   logoutBtn.addEventListener("click", (event) => {
