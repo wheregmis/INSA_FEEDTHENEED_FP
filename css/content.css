@@ -348,11 +348,30 @@ footer {
     width: 21%;
     height: 150px;
   }
+  form {
+    padding: 20px 10px;
+    text-align: center;
+  }
 }
 @media screen and (max-width: 650px) {
   .column {
     width: 100%;
     display: block;
+  }
+  form {
+    padding: 20px 10px;
+    text-align: center;
+  }
+  .inline input {
+    font-size: 1.6em;
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 16px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 78%;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
   }
 }
 
